@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-	"start": "node index.js"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,7 @@
   "homepage": "https://github.com/MBprograms/101310632_COMP3133_Assignment1#readme",
   "dependencies": {
     "apollo-server-express": "^3.13.0",
+    "bcrypt": "^5.1.1",
     "express": "^4.18.2",
     "graphql": "^16.8.1",
     "mongoose": "^8.1.3"

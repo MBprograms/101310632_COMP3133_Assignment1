@@ -7,5 +7,14 @@ const userSchema = new mongoose.Schema({
 });
 
 const User = mongoose.model('User', userSchema);
-
+const resolvers = {
+    Mutation: {
+      signup: async (_, { username, email, password }) => {
+        const user = await User.create({ username, email, password });
+        return user;
+      }
+    }
+  };
+  
+  module.exports = resolvers;
 module.exports = User;

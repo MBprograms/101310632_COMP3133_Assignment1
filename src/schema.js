@@ -1,12 +1,18 @@
-const { gql } = require('apollo-server-express');
-const typeDefs = gql`
+const { ApolloServer, gql } = require('apollo-server-express');
+const { ApolloClient, InMemoryCache } = require('@apollo/client');
+const client = new ApolloClient({
+    uri: 'YOUR_GRAPHQL_ENDPOINT_URL',
+    cache: new InMemoryCache()
+  });const typeDefs = gql`
+
   type User {
     username: String!
     email: String!
+    password: String!
   }
+  
 
   type Employee {
-    _id: ID!
     first_name: String!
     last_name: String!
     email: String!
@@ -27,5 +33,9 @@ const typeDefs = gql`
     deleteEmployeeById(eid: ID!): Employee
   }
 `;
-
+const signupVariables = {
+    username: 'exampleUser',
+    email: 'user@example.com',
+    password: 'password123'
+  };
 module.exports = typeDefs;
