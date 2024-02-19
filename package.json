@@ -19,10 +19,12 @@
   },
   "homepage": "https://github.com/MBprograms/101310632_COMP3133_Assignment1#readme",
   "dependencies": {
+    "@apollo/client": "^3.9.5",
     "apollo-server-express": "^3.13.0",
     "bcrypt": "^5.1.1",
     "express": "^4.18.2",
     "graphql": "^16.8.1",
-    "mongoose": "^8.1.3"
+    "mongoose": "^8.1.3",
+    "react": "^18.2.0"
   }
 }

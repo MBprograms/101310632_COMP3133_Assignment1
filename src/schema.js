@@ -1,7 +1,7 @@
 const { ApolloServer, gql } = require('apollo-server-express');
 const { ApolloClient, InMemoryCache } = require('@apollo/client');
 const client = new ApolloClient({
-    uri: 'YOUR_GRAPHQL_ENDPOINT_URL',
+    uri: 'http://localhost:3000/graphql',
     cache: new InMemoryCache()
   });const typeDefs = gql`
 

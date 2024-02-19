@@ -6,8 +6,7 @@ const userResolvers = {
   Mutation: {
     signup: async (_, { username, email, password }) => {
       try {
-        const hashedPassword = await bcrypt.hash(password, 10);
-        const user = new User({ username, email, password: hashedPassword });
+        const user = new User({ username, email, password});
         await user.save();
         return user;
       } catch (error) {
@@ -19,11 +18,11 @@ const userResolvers = {
       if (!user) {
         throw new Error('User not found');
       }
-      const validPassword = await bcrypt.compare(password, user.password);
-      if (!validPassword) {
+      if (user && password === user.password) {
+        return 'Login successful';
+      } else {
         throw new Error('Invalid password');
       }
-      return 'Login successful';
     }
   }
 };
